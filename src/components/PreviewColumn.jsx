@@ -49,9 +49,9 @@ function PreviewColumn() {
             )
           }
           return (
-            <div key={input.id} className={input.className}>
+            <pre key={input.id} className={input.className}>
               {input.value || `\u00A0`}
-            </div>
+            </pre>
           )
         })
         }

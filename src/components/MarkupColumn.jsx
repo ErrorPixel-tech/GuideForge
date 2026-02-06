@@ -117,15 +117,15 @@ function MarkupColumn() {
           }
           if (input.tag) {
             return (
-              <div key={input.id}>
+              <pre key={input.id}>
                 [{input.tag}]{input.value}[/{input.tag}]
-              </div>
+              </pre>
             )
           }
           return (
-            <div key={input.id}>
+            <pre key={input.id}>
               {input.value || `\u00A0`}
-            </div>
+            </pre>
           )
         })}
         <p>Сделано с помощью SteamEditor!<br></br>www.steam-editor.com
