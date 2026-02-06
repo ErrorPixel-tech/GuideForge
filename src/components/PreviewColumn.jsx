@@ -1,14 +1,28 @@
 import { useSelector } from 'react-redux';
 import '../steam-style.scss';
+import { useDispatch } from 'react-redux';
+import { formatAllInputs } from '../features/inputs/inputs'
 // import style from './PreviewColumn.module.scss';
 
 function PreviewColumn() {
+  const dispatch = useDispatch();
   const inputs = useSelector((state) => state.inputs.items);
+
+  function handleFormatClick(event) {
+    if (!confirm("Вы уверены? Данная опция удалит все лишние пробелы и все переносы строк в блоках. Форматирование не затронет текст в [code]. Мы вас предупреждали.")){return}
+    dispatch(formatAllInputs());
+    event.target.textContent = 'Отформатировано!';
+    // через 5 секунд вернуть назад
+    setTimeout(() => {
+      event.target.textContent = 'Отформатировать';
+    }, 1000);
+  }
 
   return (
     <div className="column">
       <div className="header">
         <h2>Превью</h2>
+        <button onClick={handleFormatClick}>Отформатировать</button>
       </div>
       <div className="steam__board">
         {inputs.map((input) => {

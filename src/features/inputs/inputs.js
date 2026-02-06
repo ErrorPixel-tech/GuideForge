@@ -20,6 +20,15 @@ const inputsSlice = createSlice(
                     input.value = value;
                 }
             },
+            formatAllInputs(state){
+               state.items = state.items.map((input)=>{
+                if (input.type === "code") {
+                    return input;
+                }
+                let cleaned = input.value.replace(/\s+/g, ' ').trim();
+                return {...input, value: cleaned};    
+               });
+            },
             removeInput(state, action) {
                 state.items = state.items.filter((item) => item.id !== action.payload.id);
             },
@@ -30,6 +39,6 @@ const inputsSlice = createSlice(
     }
 );
 
-export const { addInput, updateInput, removeInput, removeAllInputs } = inputsSlice.actions;
+export const { addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = inputsSlice.actions;
 
 export default inputsSlice.reducer;
