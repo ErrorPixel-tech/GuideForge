@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { updateInput, removeInput } from '../features/inputs/inputs';
+import { updateInput, removeInput, moveInputDown, moveInputUp } from '../features/inputs/inputs';
 import style from './TextInput.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 
-function TextInput({ id, value, key, ref, onKeyDown }) {
+function TextInput({ id, value, index, ref, onKeyDown }) {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -16,12 +16,21 @@ function TextInput({ id, value, key, ref, onKeyDown }) {
     }
   };
 
+  const handleMoveDown = (index) => {
+    dispatch(moveInputDown({index}));
+  };
+  const handleMoveUp = (index) => {
+    dispatch(moveInputUp({index}));
+  };
+
   return (
     <div className={style.container}>
+      <button onClick={()=>{handleMoveUp(index)}}>UP</button>
+      <button onClick={()=>{handleMoveDown(index)}}>DOWN</button>
       <TextareaAutosize
         minRows={1}
         maxRows={5}
-        key={key}
+        key={id}
         ref={ref}
         onKeyDown={onKeyDown}
 

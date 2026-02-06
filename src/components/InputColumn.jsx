@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import TextInput from './TextInput';
 import style from './InputColumn.module.scss';
-import { removeAllInputs } from '../features/inputs/inputs';
+import { removeAllInputs, moveInputDown } from '../features/inputs/inputs';
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 
@@ -16,9 +16,15 @@ function InputColumn() {
     }
   };
 
+
   const inputs = useSelector((state) => state.inputs.items);
 
   const dispatch = useDispatch();
+
+
+  // const handleMoveUp = (id) => {
+  //   dispatch(moveInputForward(id));
+  // };
 
   const handleRemoveAll = () => {
     if (confirm("УДАЛИТЬ ВСЁ?")) {
@@ -35,7 +41,8 @@ function InputColumn() {
       </div>
 
       <div className={style.list}>
-        {inputs.map((input) => {
+        {inputs.map((input, index) => {
+
 
           if (input.type === "hr") {
             return (
@@ -61,10 +68,12 @@ function InputColumn() {
           return (
             <div key={input.id}>
               {input.type}<TextInput
-                key={input.id} 
+                key={input.id}
+                index={index}
                 ref={(el) => (inputsRef.current[input.id] = el)}
-                onKeyDown={handleKeyDown(input.id)} 
-                id={input.id} value={input.value} />
+                onKeyDown={handleKeyDown(input.id)}
+                id={input.id} 
+                value={input.value} />
             </div>
           );
         }
