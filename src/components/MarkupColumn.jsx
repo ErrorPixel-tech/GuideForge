@@ -34,7 +34,7 @@ function MarkupColumn() {
       }
       if (input.type === "code") {
         return (
-          ("[" + input.tag + "]" + input.value + "[/" + input.tag + "]" + "\n")
+          ("[p][" + input.tag + "]" + input.value + "[/" + input.tag + "]" + "[/p]\n")
         )
       }
       if (input.type === "list") {
