@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { updateInput, removeInput, moveInputDown, moveInputUp } from '../features/blocks/blocks';
+import { updateInput, removeBlock, moveInputDown, moveInputUp } from '../features/blocks/blocks';
 import style from './TextInput.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -12,7 +12,7 @@ function TextInput({ id, value, index, ref, isDisabled, onKeyDown }) {
 
   const handleDelete = () => {
     if (confirm("Уверены, что хотите удалить этот элемент?")) {
-      dispatch(removeInput({ id }));
+      dispatch(removeBlock({ id }));
     }
   };
 

@@ -37,7 +37,7 @@ const blocksSlice = createSlice(
                     return { ...input, value: cleaned };
                 });
             },
-            removeInput(state, action) {
+            removeBlock(state, action) {
                 state.items = state.items.filter((item) => item.id !== action.payload.id);
             },
             moveInputDown(state, action) {
@@ -77,6 +77,6 @@ const blocksSlice = createSlice(
     }
 );
 
-export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllBlocks, formatAllInputs } = blocksSlice.actions;
+export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeBlock, removeAllBlocks, formatAllInputs } = blocksSlice.actions;
 
 export default blocksSlice.reducer;
