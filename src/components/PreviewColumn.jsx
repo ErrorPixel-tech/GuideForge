@@ -172,7 +172,7 @@ function PreviewColumn() {
           if (input.tag) {
             return (
               <pre key={input.id} className={input.className + " pre"}>
-                {input.value || `Введите текст`}
+                {input.value || `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, illum.`}
               </pre>
             )
           }
