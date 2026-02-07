@@ -22,7 +22,7 @@ const blocksSlice = createSlice(
                     input.value = value;
                 }
             },
-            formatAllInputs(state) {
+            formatAllBlocks(state) {
                 state.items = state.items.map((input) => {
                     if (input.type === "code") {
                         return input;
@@ -57,6 +57,6 @@ const blocksSlice = createSlice(
     }
 );
 
-export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeBlock, removeAllBlocks, formatAllInputs } = blocksSlice.actions;
+export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeBlock, removeAllBlocks, formatAllBlocks } = blocksSlice.actions;
 
 export default blocksSlice.reducer;

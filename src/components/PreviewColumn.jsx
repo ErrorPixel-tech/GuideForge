@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import '../steam-style.scss';
 import { useDispatch } from 'react-redux';
-import { formatAllInputs } from '../features/blocks/blocks'
+import { formatAllBlocks } from '../features/blocks/blocks'
 // import style from './PreviewColumn.module.scss';
 
 function PreviewColumn() {
@@ -10,7 +10,7 @@ function PreviewColumn() {
 
   function handleFormatClick(event) {
     if (!confirm("Вы уверены? Данная опция удалит все лишние пробелы и все переносы строк в блоках. Форматирование не затронет текст в [code]. Мы вас предупреждали.")) { return }
-    dispatch(formatAllInputs());
+    dispatch(formatAllBlocks());
     event.target.textContent = 'Отформатировано!';
     // через 5 секунд вернуть назад
     setTimeout(() => {
