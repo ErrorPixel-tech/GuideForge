@@ -147,6 +147,26 @@ function PreviewColumn() {
               </ol>
             )
           }
+          if (input.tag === "slist") {
+
+            if (!input.value.trim()) {
+              return (
+                <ul className={input.className}>
+                  <li key={1}>- Lorem ipsum dolor sit amet.</li>
+                  <li key={2}>- Lorem ipsum dolor sit amet.</li>
+                  <li key={3}>- Lorem ipsum dolor sit amet.</li>
+                </ul>
+              )
+            }
+            const arr = input.value.split(/\r?\n/);
+            return (
+              <ul className={input.className}>
+                {arr.map((str, index) => {
+                  return <li key={index}>- {str}</li>
+                })}
+              </ul>
+            )
+          }
 
 
           if (input.tag) {

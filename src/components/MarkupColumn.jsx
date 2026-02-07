@@ -56,11 +56,11 @@ function MarkupColumn() {
         return list;
       }
       if (input.type === "slist") {
-        let list = "";
+        let list = "";list += '[p]\n';
         list += "- ";
         const withMarks = input.value.replace(/\n/g, '\n- ');
         list +=withMarks;
-        list += '\n';
+        list += '\n[/p]\n';
         return list;
       }
       if (input.tag === "u"
