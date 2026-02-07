@@ -1,3 +1,8 @@
+$bg-color: #1e2021;
+$bg-column: #181a1b;
+$border-column: #3a3e41;
+$header-color: rgb(200, 195, 188);
+
 .header {
   display: flex;
   height: 36px;
@@ -5,6 +10,8 @@
   align-items: center;
   // margin-bottom: 0px;
   margin-bottom: 16px;
+  color: #c8c3bc;
+
 }
 
 .button {
@@ -24,10 +31,13 @@
 
 .column {
   flex: 1;
-  background: white;
+  background: $bg-column;
+  background-color: $bg-column;
   border: 1px solid #ddd;
+  border-color: $border-column;
   border-radius: 8px;
   padding: 20px;
+  color: #c8c3bc;
 
   // flex: 0 0 (100% / 4);
   // flex: 0 0 ((100% - 60px) / 4);
@@ -43,7 +53,6 @@
   h2 {
     // margin-bottom: 16px;
     font-size: 18px;
-    color: #333;
   }
 
 

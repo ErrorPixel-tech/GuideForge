@@ -63,19 +63,34 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-
+    background-color: rgb(59, 59, 59);
+    color: #fff;
+    border-color: rgb(62, 68, 70);
+    // border-color: rgb(62, 68, 70);
     // Синхронность расш с запретом уменьшения
     // min-width: 100%;
-    
+
     // Синхронность расш но каждый по отдельности уменьшается
     // width: 100%;
-    
+
     // max-width: 100%;
-    
+
     // min-height: 35px;
     min-height: 36px;
-    
+
+    $dis-bg: #3a3a3a;
+    $dis-text: #8c8c8c;
+    $dis-border: #505050;
+
+    &:disabled {
+        background-color: $dis-bg;
+        color: $dis-text;
+        border-color: $dis-border;
+        opacity: 0.7;
+    }
+
     min-width: 242px;
+
     &:focus {
         outline: none;
         border-color: #007bff;

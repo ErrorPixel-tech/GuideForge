@@ -61,7 +61,14 @@ function InputColumn() {
           if (input.type === "screenshot-horizontal") {
             return (
               <div key={input.id}>
-                {input.type}{input.tag}<TextInput isDisabled={input.isDisabled} index={index} id={input.id} value={"[ГАЛЕРЕЯ]"} />
+                {input.type}{input.tag}<TextInput isDisabled={input.isDisabled} index={index} id={input.id} value={"[ГАЛЕРЕЯ 2 КАРТИНКИ]"} />
+              </div>
+            );
+          }
+          if (input.type === "screenshot-block") {
+            return (
+              <div key={input.id}>
+                {input.type}{input.tag}<TextInput isDisabled={input.isDisabled} index={index} id={input.id} value={"[ГАЛЕРЕЯ 4 КАРТИНКИ]"} />
               </div>
             );
           }

@@ -1,7 +1,14 @@
+
+$bg-color: #1e2021;
+$bg-column: #181a1b;
+$border-column: #3a3e41;
+$header-color: rgb(200, 195, 188);
+
+
 .column {
     flex: 1;
-    background: white;
-    border: 1px solid #ddd;
+    background: $bg-column;
+    border: 1px solid $border-column;
     border-radius: 8px;
     padding: 20px;
 
@@ -28,7 +35,7 @@
     h2 {
         margin-bottom: 16px;
         font-size: 18px;
-        color: #333;
+        color: $header-color;
     }
 
     // button {

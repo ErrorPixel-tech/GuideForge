@@ -18,6 +18,7 @@ function PreviewColumn() {
     }, 1000);
   }
 
+
   return (
     <div className="column">
       <div className="header">
@@ -49,6 +50,20 @@ function PreviewColumn() {
                   <span>Картинка</span>
                 </div>
                 <div >
+                  <span>Картинка</span>
+                </div>
+              </div>
+            )
+          }
+          if (input.type === "screenshot-block") {
+            return (
+              <div key={input.id} className={input.className}>
+                <div >
+                  <span>Картинка</span>
+                  <span>Картинка</span>
+                </div>
+                <div >
+                  <span>Картинка</span>
                   <span>Картинка</span>
                 </div>
               </div>

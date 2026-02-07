@@ -16,6 +16,9 @@ function MarkupColumn() {
       if (input.type === "screenshot-horizontal") {
         return (`[p]\n[table]\n[tr]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
       }
+      if (input.type === "screenshot-block") {
+        return (`[p]\n[table]\n[tr]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[/tr]\n[tr]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[td]\nВставьтеСкриншотСюдаВоВсюШирину\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
+      }
       if (input.type === "code") {
         return (
           ("[" + input.tag + "]" + input.value + "[/" + input.tag + "]" + "\n")
@@ -37,8 +40,8 @@ function MarkupColumn() {
 
   async function handleCopyClick(event) {
     let a = createMarkUpCodeArray();
-    
-    let newcode = a.reduce((acc, el)=>acc + el, "");
+
+    let newcode = a.reduce((acc, el) => acc + el, "");
 
     try {
       await navigator.clipboard.writeText(newcode);
@@ -61,7 +64,7 @@ function MarkupColumn() {
         <button onClick={handleCopyClick}>Скопировать</button>
       </div>
       <div className='markup-list'>
-        {createMarkUpCodeArray().map((el, index)=>{
+        {createMarkUpCodeArray().map((el, index) => {
           return (
             <pre className={style.pre} key={index}>{el}</pre>)
         })}
