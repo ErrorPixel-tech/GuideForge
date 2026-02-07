@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addInput, handleAddList } from '../features/inputs/inputs';
+import { addInput, addList } from '../features/blocks/blocks';
 import ButtonType from './ButtonType';
 import style from './ButtonColumn.module.scss';
 
@@ -10,7 +10,7 @@ function ButtonColumn() {
     dispatch(addInput(payload));
   };
   const handleAddList = (payload) => {
-    dispatch(handleAddList(payload));
+    dispatch(addList(payload));
   };
 
   return (

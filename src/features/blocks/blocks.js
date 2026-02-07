@@ -2,9 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { items: [], };
 
-const inputsSlice = createSlice(
+const blocksSlice = createSlice(
     {
-        name: "inputs",
+        name: "blocks",
         initialState,
         reducers: {
             addInput(state, action) {
@@ -18,8 +18,8 @@ const inputsSlice = createSlice(
                 const isDisabled = action.payload?.isDisabled || false;
                 state.items.push({ id: newId, type: action.payload.type, value: '', className: action.payload.className, tag: action.payload.tag, isDisabled });
             },
-            handleAddList(state, action) {
-                return 0;
+            addList(state, action) {
+                0;
             },
             updateInput(state, action) {
                 const { id, value } = action.payload;
@@ -77,6 +77,6 @@ const inputsSlice = createSlice(
     }
 );
 
-export const { handleAddList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = inputsSlice.actions;
+export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = blocksSlice.actions;
 
-export default inputsSlice.reducer;
+export default blocksSlice.reducer;

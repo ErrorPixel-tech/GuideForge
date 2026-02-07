@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { updateInput, removeInput, moveInputDown, moveInputUp } from '../features/inputs/inputs';
+import { updateInput, removeInput, moveInputDown, moveInputUp } from '../features/blocks/blocks';
 import style from './TextInput.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 

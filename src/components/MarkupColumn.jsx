@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import style from './MarkupColumn.module.scss';
 
 function MarkupColumn() {
-  const inputs = useSelector((state) => state.inputs.items);
+  const inputs = useSelector((state) => state.blocks.items);
 
   function createMarkUpCodeArray() {
     let code = inputs.map((input) => {

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import TextInput from './TextInput';
 import style from './InputColumn.module.scss';
-import { removeAllInputs } from '../features/inputs/inputs';
+import { removeAllInputs } from '../features/blocks/blocks';
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 
@@ -17,7 +17,7 @@ function InputColumn() {
   };
 
 
-  const inputs = useSelector((state) => state.inputs.items);
+  const inputs = useSelector((state) => state.blocks.items);
 
   const dispatch = useDispatch();
 

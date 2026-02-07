@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import inputsSlice from '../features/inputs/inputs';
+import blocksSlice from '../features/blocks/blocks.js';
 
 import { loadState, saveState } from '../localStorage.js';
 
 const preloadedState = loadState();
 
 export const store = configureStore({
-    reducer: { inputs: inputsSlice },
+    reducer: { blocks: blocksSlice },
     preloadedState
 });
 
