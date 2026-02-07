@@ -18,6 +18,9 @@ const inputsSlice = createSlice(
                 const isDisabled = action.payload?.isDisabled || false;
                 state.items.push({ id: newId, type: action.payload.type, value: '', className: action.payload.className, tag: action.payload.tag, isDisabled });
             },
+            handleAddList(state, action) {
+                return 0;
+            },
             updateInput(state, action) {
                 const { id, value } = action.payload;
                 const input = state.items.find(item => item.id === id);
@@ -74,6 +77,6 @@ const inputsSlice = createSlice(
     }
 );
 
-export const { moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = inputsSlice.actions;
+export const { handleAddList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = inputsSlice.actions;
 
 export default inputsSlice.reducer;

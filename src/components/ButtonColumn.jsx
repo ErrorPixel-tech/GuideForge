@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addInput } from '../features/inputs/inputs';
+import { addInput, handleAddList } from '../features/inputs/inputs';
 import ButtonType from './ButtonType';
 import style from './ButtonColumn.module.scss';
 
@@ -8,6 +8,9 @@ function ButtonColumn() {
 
   const handleAddInput = (payload) => {
     dispatch(addInput(payload));
+  };
+  const handleAddList = (payload) => {
+    dispatch(handleAddList(payload));
   };
 
   return (
@@ -50,9 +53,14 @@ function ButtonColumn() {
         </div>
 
         <div className={style['btns-block']}>
-          <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddInput({ type: "hr", className: "steam__separator", tag: "hr", isDisabled: true })}>[separator]</ButtonType></div>
+          <ButtonType className={style['button']} onClick={() => handleAddInput({ type: "list", className: "steam__list", tag: "list"})}>[LIST]</ButtonType>
+        </div>
+
+        <div className={style['btns-block']}>
+          <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddList({ type: "hr", className: "steam__separator", tag: "hr", isDisabled: true })}>[separator]</ButtonType>
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 
