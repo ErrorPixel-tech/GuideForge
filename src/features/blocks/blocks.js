@@ -13,9 +13,17 @@ const blocksSlice = createSlice(
                 state.items.push({ id: newId, type: action.payload.type, value: '', className: action.payload.className, tag: action.payload.tag, isDisabled });
             },
             // addList(state, action) {
-            //     const newId = Date.now().toString();
-            //     state.items.push({ id: newId, type: action.payload.type, value: '', className: action.payload.className, tag: action.payload.tag });
-            // },
+            //     const listId = Date.now().toString();
+            //     const itemId = Date.now().toString();
+            //     state.items.push({
+            //         id: listId,
+            //         type: "listBlock",
+            //         className: action.payload.className,
+            //         inputBlocks: [
+            //             { id: itemId, value: '' }
+            //         ],
+            //     });
+            },
             updateInput(state, action) {
                 const { id, value } = action.payload;
                 const input = state.items.find(item => item.id === id);
