@@ -43,12 +43,19 @@ function InputColumn() {
 
       <div className={style.list}>
         {blocks.map((block, index) => {
-          console.log("block");
-          console.log(block);
           if (block.type === "listBlock") {
-            return (<div key={block.id}>
-              <ListItemInput></ListItemInput>
-            </div>);
+            let list = block.listItems;
+            let listId = block.id;
+            console.log(list);
+            let jsx = list.map((item, index) => {
+              console.log(item);
+              return (
+                <div key={index}>
+                  <ListItemInput listId={listId} id={item.id} value={item.value}></ListItemInput>
+                </div>
+              );
+            });
+            return jsx;
           }
 
           if (block.type === "hr") {

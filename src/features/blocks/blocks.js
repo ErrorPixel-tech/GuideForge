@@ -29,8 +29,9 @@ const blocksSlice = createSlice(
                     blockType: "listBlock",
                     type: "listBlock",
                     className: action.payload.className,
-                    inputBlocks: [
-                        { id: itemId, value: '' }
+                    listItems: [
+                        { id: itemId, value: '1' },
+                        { id: itemId+1, value: '2' }
                     ],
                 });
             },
@@ -42,7 +43,12 @@ const blocksSlice = createSlice(
                 }
             },
             updateList(state, action) {
-                state; action;
+                const { id, listId, value } = action.payload;
+                const list = state.items.find(item => item.id === listId);
+                const input = list.listItems.find(item => item.id === id);
+                if (input) {
+                    input.value = value;
+                }
             },
             formatAllBlocks(state) {
                 state.items = state.items.map((input) => {
