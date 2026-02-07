@@ -70,13 +70,13 @@ const blocksSlice = createSlice(
                 state.items[index] = state.items[newIndex];
                 state.items[newIndex] = holder;
             },
-            removeAllInputs(state) {
+            removeAllBlocks(state) {
                 state.items = [];
             }
         }
     }
 );
 
-export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllInputs, formatAllInputs } = blocksSlice.actions;
+export const { addList, moveInputUp, moveInputDown, addInput, updateInput, removeInput, removeAllBlocks, formatAllInputs } = blocksSlice.actions;
 
 export default blocksSlice.reducer;

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import TextInput from './TextInput';
 import style from './InputColumn.module.scss';
-import { removeAllInputs } from '../features/blocks/blocks';
+import { removeAllBlocks } from '../features/blocks/blocks';
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 
@@ -28,7 +28,7 @@ function InputColumn() {
 
   const handleRemoveAll = () => {
     if (confirm("УДАЛИТЬ ВСЁ?")) {
-      dispatch(removeAllInputs());
+      dispatch(removeAllBlocks());
     }
   };
 
