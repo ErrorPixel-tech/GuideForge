@@ -53,11 +53,11 @@ function ButtonColumn() {
         </div>
 
         <div className={style['btns-block']}>
-          <ButtonType className={style['button']} onClick={() => handleAddInput({ type: "list", className: "steam__list", tag: "list"})}>[LIST]</ButtonType>
+          <ButtonType className={style['button']} onClick={() => handleAddList({className: "steam__list"})}>[LIST]</ButtonType>
         </div>
 
         <div className={style['btns-block']}>
-          <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddList({ type: "hr", className: "steam__separator", tag: "hr", isDisabled: true })}>[separator]</ButtonType>
+          <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddInput({ type: "hr", className: "steam__separator", tag: "hr", isDisabled: true })}>[separator]</ButtonType>
         </div>
       </div>
     </div >
