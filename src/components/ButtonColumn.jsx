@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { addInput, addList } from '../features/blocks/blocks';
+import { addInput } from '../features/blocks/blocks';
+// import { addList } from '../features/blocks/blocks';
 import ButtonType from './ButtonType';
 import style from './ButtonColumn.module.scss';
 
@@ -9,9 +10,10 @@ function ButtonColumn() {
   const handleAddInput = (payload) => {
     dispatch(addInput(payload));
   };
-  const handleAddList = (payload) => {
-    dispatch(addList(payload));
-  };
+
+  // const handleAddList = (payload) => {
+  //   dispatch(addList(payload));
+  // };
 
   return (
     <div className={style.column}>
@@ -25,10 +27,10 @@ function ButtonColumn() {
           <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "enter", className: "steam__enter", tag: "", isDisabled: true })}>Enter</ButtonType>
         </div>
         
-        {/* WORK */}
+        {/* WORK
         <div className={style['btns-block']}>
           <ButtonType className={style['button']} onClick={() => handleAddList({ className: "steam__list" })}>[LIST]</ButtonType>
-        </div>
+        </div> */}
 
         <div className={style['btns-block']}>
           <ButtonType className={`${style['button']} ${style['button--header']}`} onClick={() => handleAddInput({ type: "h1", className: "steam__header-1", tag: "h1" })}>[h1]</ButtonType>

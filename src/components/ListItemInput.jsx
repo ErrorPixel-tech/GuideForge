@@ -4,7 +4,7 @@ import { updateList } from '../features/blocks/blocks';
 import style from './ListItemInput.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 
-function ListItemInput({ id, listId, value, ref, isDisabled, onKeyDown }) {
+function ListItemInput({ id, listId, value}) {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
