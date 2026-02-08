@@ -1,11 +1,24 @@
 // src/localStorage.ts
+import data from './welcomeData';
+// import { useI18n } from 'vue-i18n';
+import i18n from './i18n';
+
 export const loadState = () => {
+
   try {
     const serializedState = localStorage.getItem('GuideLabState');
     if (serializedState === null) {
       // return undefined; // пусть RTK возьмёт initialState
+      console.log("empty");
+      
+      const lng = i18n.language || localStorage.getItem('i18nextLng') || 'en';
+
+      const dataRu = data.ru;
+      const dataEn = data.en;
+
+      const data2 = lng.startsWith('ru') ? dataRu : dataEn;
       return (
-        { "blocks": { "items": [{ "id": "1770472660814", "type": "h1", "value": "Что такое GuideLab?", "className": "steam__header-1", "tag": "h1", "isDisabled": false }, { "id": "1770473680101", "type": "p", "value": "GuideLab — это конструктор гайдов, который упрощает создание подробных и красиво оформленных статей для Steam и других платформ. Он помогает авторам сосредоточиться на содержании, а не на рутине форматирования и технических нюансах.", "className": "steam__paragraph", "tag": "p", "isDisabled": false }, { "id": "1770473718588", "type": "h1", "value": "Основные возможности", "className": "steam__header-1", "tag": "h1", "isDisabled": false }, { "id": "1770473766044", "type": "screenshot-horizontal", "value": "", "className": "steam__screenshot-horizontal", "tag": "", "isDisabled": true }, { "id": "1770473739900", "type": "p", "value": "В GuideLab можно собирать гайды из готовых блоков: заголовков, списков, цитат, предупреждений, вставок кода и изображений. Шаблоны структур, сохранённые пресеты оформления и удобный предпросмотр позволяют быстро настраивать единый стиль для серии материалов и экономить время на повторяющихся задачах.", "className": "steam__paragraph", "tag": "p", "isDisabled": false }, { "id": "1770473748444", "type": "h1", "value": "Для кого создан GuideLab", "className": "steam__header-1", "tag": "h1", "isDisabled": false }, { "id": "1770473761308", "type": "screenshot-block", "value": "", "className": "steam__screenshot-block", "tag": "", "isDisabled": true }, { "id": "1770473748884", "type": "p", "value": "GuideLab подойдёт авторам, которые регулярно пишут гайды по играм, модам, софту или обучающим материалам и хотят системности вместо хаоса в черновиках. Он будет полезен как начинающим создателям контента, которым нужен понятный инструмент, так и опытным авторам, стремящимся ускорить работу и поддерживать профессиональный уровень оформления.", "className": "steam__paragraph", "tag": "p", "isDisabled": false }, { "id": "1770473777204", "type": "screenshot", "value": "", "className": "steam__screenshot", "tag": "", "isDisabled": true }, { "id": "1770473789564", "type": "hr", "value": "", "className": "steam__separator", "tag": "hr", "isDisabled": true }] } }
+        data2
       );
     }
     return JSON.parse(serializedState);

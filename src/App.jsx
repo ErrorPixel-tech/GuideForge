@@ -8,6 +8,7 @@ import './buttons.scss';
 function App() {
   return (
     <div className="app">
+      <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=3662682549' className='help-button'>?</a>
       <ButtonColumn />
       <InputColumn />
       <MarkupColumn />
