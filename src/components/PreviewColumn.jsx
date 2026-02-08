@@ -23,7 +23,7 @@ function PreviewColumn() {
 
 
   return (
-    <div className="column">
+    <div id="previewColumn" className="column">
       <div className="header">
         <h2>{t("preview.header")}</h2>
         <button onClick={handleFormatClick}>{t("preview.formatButtonTitle")}</button>

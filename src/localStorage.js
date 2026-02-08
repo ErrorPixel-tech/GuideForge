@@ -9,7 +9,6 @@ export const loadState = () => {
     const serializedState = localStorage.getItem('GuideLabState');
     if (serializedState === null) {
       // return undefined; // пусть RTK возьмёт initialState
-      console.log("empty");
       
       const lng = i18n.language || localStorage.getItem('i18nextLng') || 'en';
 

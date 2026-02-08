@@ -48,9 +48,7 @@ function InputColumn() {
           if (block.type === "listBlock") {
             let list = block.items;
             let listId = block.id;
-            console.log(list);
             let jsx = list.map((item, index) => {
-              console.log(item);
               return (
                 <div key={index}>
                   <ListItemInput listId={listId} id={item.id} value={item.value}></ListItemInput>
