@@ -99,7 +99,7 @@ function PreviewColumn() {
               // <pre className={style.pre} key={input.id} className={style[input.className]}>
               <pre key={input.id} className={style[input.className]}>
                 {/* {input.value || `\u00A0`} */}
-                {input.value || `Введите текст`}
+                {input.value || `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus maxime qui repellendus voluptate est reprehenderit vel et.`}
               </pre>
             )
           }
@@ -108,7 +108,7 @@ function PreviewColumn() {
             for (let index = 0; index < input.enter; index++) {
               str += "\n";
             }
-            return <pre className={style[input.className] + " " + style.pre}>
+            return <pre key={input.id} className={style[input.className] + " " + style.pre}>
               {str}
             </pre>;
           }
@@ -135,7 +135,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={style[input.className]}>
+                <ul key={input.id} className={style[input.className]}>
                   <li key={1}>Lorem ipsum dolor sit amet.</li>
                   <li key={2}>Lorem ipsum dolor sit amet.</li>
                   <li key={3}>Lorem ipsum dolor sit amet.</li>
@@ -144,7 +144,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={style[input.className]}>
+              <ul key={input.id} className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{str}</li>
                 })}
@@ -155,7 +155,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ol className={style[input.className]}>
+                <ol key={input.id} className={style[input.className]}>
                   <li key={1}>Lorem ipsum dolor sit amet.</li>
                   <li key={2}>Lorem ipsum dolor sit amet.</li>
                   <li key={3}>Lorem ipsum dolor sit amet.</li>
@@ -164,7 +164,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ol className={style[input.className]}>
+              <ol  key={input.id} className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{str}</li>
                 })}
@@ -175,16 +175,16 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={style[input.className]}>
-                  <li key={1}>• Lorem ipsum dolor sit amet.</li>
-                  <li key={2}>• Lorem ipsum dolor sit amet.</li>
-                  <li key={3}>• Lorem ipsum dolor sit amet.</li>
+                <ul key={input.id}  className={style[input.className]}>
+                  <li>• Lorem ipsum dolor sit amet.</li>
+                  <li>• Lorem ipsum dolor sit amet.</li>
+                  <li>• Lorem ipsum dolor sit amet.</li>
                 </ul>
               )
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={style[input.className]}>
+              <ul key={input.id} className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>• {str}</li>
                 })}
@@ -194,7 +194,7 @@ function PreviewColumn() {
           if (input.tag === "checkbox") {
             if (!input.value.trim()) {
               return (
-                <ul className={style[input.className]}>
+                <ul key={input.id} className={style[input.className]}>
                   <div>СПИСОК ДЕЛ:</div>
                   <li key={1}>- [x] Lorem ipsum dolor sit amet.</li>
                   <li key={2}>- [ ] Lorem ipsum dolor sit amet.</li>
@@ -204,7 +204,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={style[input.className]}>
+              <ul key={input.id} className={style[input.className]}>
                 <div>СПИСОК ДЕЛ:</div>
                 {arr.map((str, index) => {
                   return <li key={index}>- [ ] {str}</li>
@@ -216,7 +216,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={style[input.className]}>
+                <ul key={input.id} className={style[input.className]}>
                   <li key={1}>1. Lorem ipsum dolor sit amet.</li>
                   <li key={2}>2. Lorem ipsum dolor sit amet.</li>
                   <li key={3}>3. Lorem ipsum dolor sit amet.</li>
@@ -226,7 +226,7 @@ function PreviewColumn() {
             let i = 1;
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={style[input.className]}>
+              <ul key={input.id} className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{i++}. {str}</li>
                 })}
