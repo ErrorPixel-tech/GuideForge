@@ -81,8 +81,8 @@ function MarkupColumn() {
       if (input.type === "slist") {
         let list = "";
         list += '[p]\n';
-        list += "- ";
-        const withMarks = input.value.replace(/\n/g, '\n- ');
+        list += "• ";
+        const withMarks = input.value.replace(/\n/g, '\n• ');
         list += withMarks;
         list += '\n[/p]\n';
         return list;

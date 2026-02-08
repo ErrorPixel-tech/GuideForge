@@ -31,7 +31,7 @@ const blocksSlice = createSlice(
                     className: action.payload.className,
                     items: [
                         { id: itemId, value: '1' },
-                        { id: itemId+1, value: '2' }
+                        { id: itemId + 1, value: '2' }
                     ],
                 });
             },
@@ -52,7 +52,12 @@ const blocksSlice = createSlice(
             },
             formatAllBlocks(state) {
                 state.items = state.items.map((input) => {
-                    if (input.type === "code") {
+                    if (input.type === "code"
+                        || input.type === "list"
+                        || input.type === "olist"
+                        || input.type === "slist"
+                        || input.type === "numlist"
+                        || input.type === "checkbox") {
                         return input;
                     }
                     let cleaned = input.value.replace(/\s+/g, ' ').trim();

@@ -9,7 +9,7 @@ function PreviewColumn() {
   const inputs = useSelector((state) => state.blocks.items);
 
   function handleFormatClick(event) {
-    if (!confirm("Вы уверены? Данная опция удалит все лишние пробелы и все переносы строк в блоках. Форматирование не затронет текст в [code]. Мы вас предупреждали.")) { return }
+    if (!confirm("Вы уверены? Данная опция удалит все лишние пробелы и все переносы строк в блоках. Форматирование не затронет текст в [code] и в списках. Мы вас предупреждали.")) { return }
     dispatch(formatAllBlocks());
     event.target.textContent = 'Отформатировано!';
     // через 5 секунд вернуть назад
@@ -164,9 +164,9 @@ function PreviewColumn() {
             if (!input.value.trim()) {
               return (
                 <ul className={input.className}>
-                  <li key={1}>- Lorem ipsum dolor sit amet.</li>
-                  <li key={2}>- Lorem ipsum dolor sit amet.</li>
-                  <li key={3}>- Lorem ipsum dolor sit amet.</li>
+                  <li key={1}>• Lorem ipsum dolor sit amet.</li>
+                  <li key={2}>• Lorem ipsum dolor sit amet.</li>
+                  <li key={3}>• Lorem ipsum dolor sit amet.</li>
                 </ul>
               )
             }
@@ -174,7 +174,7 @@ function PreviewColumn() {
             return (
               <ul className={input.className}>
                 {arr.map((str, index) => {
-                  return <li key={index}>- {str}</li>
+                  return <li key={index}>• {str}</li>
                 })}
               </ul>
             )
