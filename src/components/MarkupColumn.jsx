@@ -145,8 +145,8 @@ function MarkupColumn() {
 
     const phrases = [
       { text: 'Сделано с помощью «GuideForge»', weight: 5 },  // высокий шанс
-      { text: '«GuideForge». Все права защищахахахаха...', weight: 3 },
-      { text: '«GuideForge».Кто прочёл, тот осёл :)', weight: 1 },  // низкий шанс
+      { text: 'Сделано с помощью «GuideForge». Все права защищахахахаха...', weight: 3 },
+      { text: 'Сделано с помощью «GuideForge». Кто прочёл, тот осёл :)', weight: 1 },  // низкий шанс
     ];
     function getRandomPhrase(phrases) {
       // Суммируем все веса
@@ -169,7 +169,7 @@ function MarkupColumn() {
 
     const randomPhrase = getRandomPhrase(phrases);
 
-    a.push(`\n[i]${randomPhrase}[/i]\n`);
+    a.push(`[p][i]${randomPhrase}[/i][/p]`);
 
 
     let newcode = a.reduce((acc, el) => acc + el, "");
