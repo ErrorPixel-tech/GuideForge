@@ -1,0 +1,6 @@
+{
+  "page": {
+    "hello": "Hello, {{name}}!",
+    "changeLanguage": "Change language to Russian"
+  }
+}

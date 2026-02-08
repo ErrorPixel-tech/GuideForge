@@ -3,10 +3,12 @@ import { addInput } from '../features/blocks/blocks';
 // import { addList } from '../features/blocks/blocks';
 import ButtonType from './ButtonType';
 import style from './ButtonColumn.module.scss';
+import { useTranslation } from "react-i18next";
 
 function ButtonColumn() {
   const dispatch = useDispatch();
-
+  const { t } = useTranslation();
+  
   const handleAddInput = (payload) => {
     dispatch(addInput(payload));
   };
@@ -22,12 +24,12 @@ function ButtonColumn() {
       </div>
 
       <div className={style['container']}>
-{/* ENTER 1 мало */}
-{/* ENTER 2 мало */}
-{/* ENTER 3 чуть-чуть не хватает*/}
-{/* ENTER 4 чуть чуть не*/}
-{/* ENTER 5 */}
-{/* ENTER 6 не вижу разницы*/}
+        {/* ENTER 1 мало */}
+        {/* ENTER 2 мало */}
+        {/* ENTER 3 чуть-чуть не хватает*/}
+        {/* ENTER 4 чуть чуть не*/}
+        {/* ENTER 5 */}
+        {/* ENTER 6 не вижу разницы*/}
         <div className={style['btns-block']}>
           {/* <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "enter", className: "steam__enter", tag: "", isDisabled: true, enter: "1" })}>Small space</ButtonType> */}
           {/* <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "enter", className: "steam__enter", tag: "", isDisabled: true, enter: "2" })}>Enter-2</ButtonType> */}
