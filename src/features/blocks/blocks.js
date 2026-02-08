@@ -9,16 +9,23 @@ const blocksSlice = createSlice(
         reducers: {
             addInput(state, action) {
                 const newId = Date.now().toString();
-                const isDisabled = action.payload?.isDisabled || false;
+                const {
+                    type,
+                    className,
+                    tag,
+                    isDisabled = false,
+                    ...otherProps
+                } = action.payload
                 state.items.push(
                     {
                         id: newId,
                         blockType: "inputBlock",
-                        type: action.payload.type,
+                        type,
                         value: '',
-                        className: action.payload.className,
-                        tag: action.payload.tag,
-                        isDisabled
+                        className,
+                        tag,
+                        isDisabled,
+                        ...otherProps
                     });
             },
             addList(state, action) {
