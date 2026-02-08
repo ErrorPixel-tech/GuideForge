@@ -192,7 +192,7 @@ function MarkupColumn() {
   return (
     <div className="column">
       <div className="header">
-        <h2>Разметка</h2>
+        <h2>{t("markup.header")}</h2>
         <button onClick={handleCopyClick}>{t("markup.btnTitle1")}</button>
       </div>
       <div className='markup-list'>

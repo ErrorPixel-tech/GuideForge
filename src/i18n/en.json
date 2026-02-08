@@ -27,6 +27,7 @@
     "removeAllButton": "Remove all?"
   },
   "markup": {
+    "header": "Markup",
     "floatLeft": "HalfWidthLeftAligned",
     "floatRight": "HalfWidthRightAligned",
     "wideImage": "FullWidthCentered",
@@ -43,6 +44,7 @@
     }
   },
   "preview": {
+    "header": "Preview",
     "formatButtonTitle": "Format",
     "formatButtonSecondTitle": "Formatted!",
     "formatButtonMsg": "Are you sure? This option will remove all extra spaces and all line breaks in blocks. Formatting will not affect text in [code] and in lists. You have been warned.",

@@ -33,7 +33,7 @@ $header-color: rgb(200, 195, 188);
     /* на всякий случай для старых браузеров [web:12] */
 
     h2 {
-        margin-bottom: 16px;
+        // margin-bottom: 16px;
         font-size: 18px;
         color: $header-color;
     }
@@ -68,7 +68,7 @@ $header-color: rgb(200, 195, 188);
     justify-content: space-between;
     align-items: center;
     // margin-bottom: 0px;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 }
 
 
