@@ -41,6 +41,11 @@
       "content-1": "Icon",
       "content-2": "Achievement",
       "content-3": "There are non‑breaking spaces here to stretch the table!"
+    },
+    "phrases": {
+      "text1": "Made with “GuideForge”.",
+      "text2": "Made with “GuideForge”. All rights reserved.",
+      "text3": "Made with “GuideForge”."
     }
   },
   "preview": {
