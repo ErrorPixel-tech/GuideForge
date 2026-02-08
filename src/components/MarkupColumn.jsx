@@ -52,7 +52,7 @@ function MarkupColumn() {
         //   `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание${result}[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Описание[/td]\n[/tr]\n[/table]\n[/p]\n`
         // )
         return (
-          `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Здесь неразрывные пробелы!${result}[/td]\n[/tr]\n[/table]\n[/p]\n`
+          `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Тут неразрывные пробелы, чтобы растянуть таблицу!${result}[/td]\n[/tr]\n[/table]\n[/p]\n`
         )
       }
       if (input.type === "code") {

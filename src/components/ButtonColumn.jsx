@@ -74,7 +74,7 @@ function ButtonColumn() {
         {/* КАРТИНКИ */}
         <div className={style['btns-block']}>
           <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "p-img", className: "steam__paragraph__image" })}>Слева</ButtonType>
-          <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "p-img-r", className: "steam__paragraph__image steam__paragraph__image--right" })}>Справа</ButtonType>
+          <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "p-img-r", className: "steam__paragraph__image--right" })}>Справа</ButtonType>
           <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddInput({ type: "screenshot", className: "steam__screenshot", tag: "", isDisabled: true })}>1 Картинка</ButtonType>
           <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddInput({ type: "screenshot-horizontal", className: "steam__screenshot-horizontal", tag: "", isDisabled: true })}>2 Картинки</ButtonType>
           <ButtonType className={`${style['button']} ${style['button--something']}`} onClick={() => handleAddInput({ type: "screenshot-block", className: "steam__screenshot-block", tag: "", isDisabled: true })}>4 Картинки</ButtonType>

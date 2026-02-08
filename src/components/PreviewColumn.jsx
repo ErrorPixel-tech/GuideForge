@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import '../steam-style.scss';
+// import '../steam-style.scss';
 import { useDispatch } from 'react-redux';
 import { formatAllBlocks } from '../features/blocks/blocks'
-// import style from './PreviewColumn.module.scss';
+import style from './PreviewColumn.module.scss';
 
 function PreviewColumn() {
   const dispatch = useDispatch();
@@ -25,12 +25,12 @@ function PreviewColumn() {
         <h2>Превью</h2>
         <button onClick={handleFormatClick}>Отформатировать</button>
       </div>
-      <div className="steam__board">
+      <div className={style["steam__board"]}>
         {inputs.map((input) => {
           if (input.type === "hr") {
             return (
               <div key={input.id} >
-                <div className={input.className}>
+                <div className={style[input.className]}>
                 </div>
                 &nbsp;
               </div>
@@ -38,9 +38,9 @@ function PreviewColumn() {
           }
           if (input.type === "p-img") {
             return (
-              <div key={input.id} className={input.className}>
+              <div key={input.id} className={style[input.className]}>
                 <span>Картинка</span>
-                <pre key={input.id} className={input.className + " pre"}>
+                <pre key={input.id} className={style[input.className] + " " + style.pre}>
                   {input.value || `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus maxime qui repellendus voluptate est reprehenderit vel et.`}
                 </pre>
                 <div className='footer'></div>
@@ -49,9 +49,9 @@ function PreviewColumn() {
           }
           if (input.type === "p-img-r") {
             return (
-              <div key={input.id} className={input.className}>
+              <div key={input.id} className={style[input.className]}>
                 <span>Картинка</span>
-                <pre key={input.id} className={input.className + " pre"}>
+                <pre key={input.id} className={style[input.className] + " " + style.pre}>
                   {input.value || `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus maxime qui repellendus voluptate est reprehenderit vel et.`}
                 </pre>
                 <div className='footer'></div>
@@ -60,14 +60,14 @@ function PreviewColumn() {
           }
           if (input.type === "screenshot") {
             return (
-              <div key={input.id} className={input.className}>
+              <div key={input.id} className={style[input.className]}>
                 <span>Картинка</span>
               </div>
             )
           }
           if (input.type === "screenshot-horizontal") {
             return (
-              <div key={input.id} className={input.className}>
+              <div key={input.id} className={style[input.className]}>
                 <div >
                   <span>Картинка</span>
                 </div>
@@ -79,7 +79,7 @@ function PreviewColumn() {
           }
           if (input.type === "screenshot-block") {
             return (
-              <div key={input.id} className={input.className}>
+              <div key={input.id} className={style[input.className]}>
                 <div >
                   <span>Картинка</span>
                   <span>Картинка</span>
@@ -93,8 +93,8 @@ function PreviewColumn() {
           }
           if (input.type === "code") {
             return (
-              // <pre className={style.pre} key={input.id} className={input.className}>
-              <pre key={input.id} className={input.className}>
+              // <pre className={style.pre} key={input.id} className={style[input.className]}>
+              <pre key={input.id} className={style[input.className]}>
                 {/* {input.value || `\u00A0`} */}
                 {input.value || `Введите текст`}
               </pre>
@@ -105,13 +105,13 @@ function PreviewColumn() {
             for (let index = 0; index < input.enter; index++) {
               str += "\n";
             }
-            return <pre className={input.className + " pre"}>
+            return <pre className={style[input.className] + " " + style.pre}>
               {str}
             </pre>;
           }
           if (input.tag === "achivment-table") {
             return (
-              <div class="steam__achivment-table">
+              <div class={style["steam__achivment-table"]}>
                 <div>Значок</div>
                 <div>Название</div>
                 <div>Описание</div>
@@ -123,7 +123,7 @@ function PreviewColumn() {
           }
           if (input.tag === "p") {
             return (
-              <pre key={input.id} className={input.className + " pre"}>
+              <pre key={input.id} className={style[input.className] + " " + style.pre}>
                 {input.value || `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur possimus maxime qui repellendus voluptate est reprehenderit vel et.`}
               </pre>
             )
@@ -132,7 +132,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={input.className}>
+                <ul className={style[input.className]}>
                   <li key={1}>Lorem ipsum dolor sit amet.</li>
                   <li key={2}>Lorem ipsum dolor sit amet.</li>
                   <li key={3}>Lorem ipsum dolor sit amet.</li>
@@ -141,7 +141,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={input.className}>
+              <ul className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{str}</li>
                 })}
@@ -152,7 +152,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ol className={input.className}>
+                <ol className={style[input.className]}>
                   <li key={1}>Lorem ipsum dolor sit amet.</li>
                   <li key={2}>Lorem ipsum dolor sit amet.</li>
                   <li key={3}>Lorem ipsum dolor sit amet.</li>
@@ -161,7 +161,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ol className={input.className}>
+              <ol className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{str}</li>
                 })}
@@ -172,7 +172,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={input.className}>
+                <ul className={style[input.className]}>
                   <li key={1}>• Lorem ipsum dolor sit amet.</li>
                   <li key={2}>• Lorem ipsum dolor sit amet.</li>
                   <li key={3}>• Lorem ipsum dolor sit amet.</li>
@@ -181,7 +181,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={input.className}>
+              <ul className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>• {str}</li>
                 })}
@@ -191,7 +191,7 @@ function PreviewColumn() {
           if (input.tag === "checkbox") {
             if (!input.value.trim()) {
               return (
-                <ul className={input.className}>
+                <ul className={style[input.className]}>
                   <div>СПИСОК ДЕЛ:</div>
                   <li key={1}>- [x] Lorem ipsum dolor sit amet.</li>
                   <li key={2}>- [ ] Lorem ipsum dolor sit amet.</li>
@@ -201,7 +201,7 @@ function PreviewColumn() {
             }
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={input.className}>
+              <ul className={style[input.className]}>
                 <div>СПИСОК ДЕЛ:</div>
                 {arr.map((str, index) => {
                   return <li key={index}>- [ ] {str}</li>
@@ -213,7 +213,7 @@ function PreviewColumn() {
 
             if (!input.value.trim()) {
               return (
-                <ul className={input.className}>
+                <ul className={style[input.className]}>
                   <li key={1}>1. Lorem ipsum dolor sit amet.</li>
                   <li key={2}>2. Lorem ipsum dolor sit amet.</li>
                   <li key={3}>3. Lorem ipsum dolor sit amet.</li>
@@ -223,7 +223,7 @@ function PreviewColumn() {
             let i = 1;
             const arr = input.value.split(/\r?\n/);
             return (
-              <ul className={input.className}>
+              <ul className={style[input.className]}>
                 {arr.map((str, index) => {
                   return <li key={index}>{i++}. {str}</li>
                 })}
@@ -234,20 +234,20 @@ function PreviewColumn() {
 
           if (input.tag === "h1" || input.tag === "h2" || input.tag === "h3") {
             return (
-              <pre key={input.id} className={input.className + " pre"}>
+              <pre key={input.id} className={style[input.className] + " " + style.pre}>
                 {input.value || `Lorem ipsum`}
               </pre>
             )
           }
           if (input.tag) {
             return (
-              <pre key={input.id} className={input.className + " pre"}>
+              <pre key={input.id} className={style[input.className] + " " + style.pre}>
                 {input.value || `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, illum.`}
               </pre>
             )
           }
           return (
-            <pre key={input.id} className={input.className + " pre"}>
+            <pre key={input.id} className={style[input.className] + " " + style.pre}>
               {input.value || `\u00A0`}
             </pre>
           )
