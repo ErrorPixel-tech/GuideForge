@@ -86,6 +86,13 @@ function InputColumn() {
               </div>
             );
           }
+          if (block.type === "achivment-table") {
+            return (
+              <div key={block.id}>
+                {block.type}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={"[ТАБЛИЦА]"} />
+              </div>
+            );
+          }
           if (block.isDisabled) {
             return (
               <div key={block.id}>

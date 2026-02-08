@@ -31,7 +31,7 @@ function ButtonColumn() {
 
         {/* WORK
         <div className={style['btns-block']}>
-          <ButtonType className={style['button']} onClick={() => handleAddList({ className: "steam__list" })}>[LIST]</ButtonType>
+        <ButtonType className={style['button']} onClick={() => handleAddList({ className: "steam__list" })}>[LIST]</ButtonType>
         </div> */}
 
         <div className={style['btns-block']}>
@@ -67,6 +67,7 @@ function ButtonColumn() {
           <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "p-img-r", className: "steam__paragraph__image steam__paragraph__image--right" })}>Справа</ButtonType>
         </div>
 
+        <ButtonType className={`${style['button']} ${style['button--text']}`} onClick={() => handleAddInput({ type: "achivment-table", className: "steam__achivment-table", tag: "achivment-table", isDisabled: true })}>Таблица</ButtonType>
         {/* <div className={style['btns-block']}>
         </div> */}
 

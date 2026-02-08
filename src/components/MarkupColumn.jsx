@@ -32,6 +32,29 @@ function MarkupColumn() {
       if (input.type === "screenshot-block") {
         return (`[p]\n[table]\n[tr]\n[td]\n${imageText}\n[/td]\n[td]\n${imageText}\n[/td]\n[/tr]\n[tr]\n[td]\n${imageText}\n[/td]\n[td]\n${imageText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
       }
+      if (input.type === "achivment-table") {
+        const pattern = '\u00A0 ';
+        let result = '';
+        // 150 многовато ок
+        // 140 ок
+        // 130 мало
+        // 125 мало
+        // 100 многовато
+        // 90 маловато
+        // 80 маловато
+        // при 100 60 на мобиле создают 3 строки
+        // при 76 25 символа создало 1 строку
+        // при 50
+        while (result.length < 140) {
+          result += pattern;
+        }
+        // return (
+        //   `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание${result}[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Описание[/td]\n[/tr]\n[/table]\n[/p]\n`
+        // )
+        return (
+          `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Здесь неразрывные пробелы!${result}[/td]\n[/tr]\n[/table]\n[/p]\n`
+        )
+      }
       if (input.type === "code") {
         return (
           ("[p][" + input.tag + "]" + input.value + "[/" + input.tag + "]" + "[/p]\n")
@@ -42,7 +65,7 @@ function MarkupColumn() {
         list += '[list]\n';
         list += "[*]";
         const withMarks = input.value.replace(/\n/g, '\n[*]');
-        list +=withMarks;
+        list += withMarks;
         list += '\n[/list]\n';
         return list;
       }
@@ -51,15 +74,15 @@ function MarkupColumn() {
         list += '[olist]\n';
         list += "[*]";
         const withMarks = input.value.replace(/\n/g, '\n[*]');
-        list +=withMarks;
+        list += withMarks;
         list += '\n[/olist]\n';
         return list;
       }
       if (input.type === "slist") {
-        let list = "";list += '[p]\n';
+        let list = ""; list += '[p]\n';
         list += "- ";
         const withMarks = input.value.replace(/\n/g, '\n- ');
-        list +=withMarks;
+        list += withMarks;
         list += '\n[/p]\n';
         return list;
       }

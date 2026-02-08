@@ -1,3 +1,6 @@
+$color-p: #a69e92;
+$color-bord: rgb(84, 91, 94);
+
 .steam__underline,
 .steam__bold,
 .steam__italic,
@@ -105,6 +108,29 @@
     overflow-wrap: anywhere;
     /* агрессивные переносы длинных слов/URL */
 
+}
+
+.steam__achivment-table {
+    display: grid;
+    color: $color-p;
+    font-size: 10px;
+    grid-template-columns: 25% 25% 50%;
+    /* 3 столбца */
+    grid-template-rows: 40px 40px;
+    /* 2 строки  */
+    border-top: 1px solid $color-bord;
+    border-left: 1px solid $color-bord;
+
+    /* отступы между ячейками, по желанию */
+    div {
+        border-right: 1px solid $color-bord;
+        border-bottom: 1px solid $color-bord;
+        display: flex;
+        padding-left: 4px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    margin-bottom: 16px;
 }
 
 $img-text: rgb(166, 158, 146);
