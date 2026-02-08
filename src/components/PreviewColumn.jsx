@@ -180,10 +180,10 @@ function PreviewColumn() {
             )
           }
           if (input.tag === "checkbox") {
-
             if (!input.value.trim()) {
               return (
                 <ul className={input.className}>
+                  <div>СПИСОК ДЕЛ:</div>
                   <li key={1}>- [x] Lorem ipsum dolor sit amet.</li>
                   <li key={2}>- [ ] Lorem ipsum dolor sit amet.</li>
                   <li key={3}>- [ ] Lorem ipsum dolor sit amet.</li>
@@ -193,8 +193,9 @@ function PreviewColumn() {
             const arr = input.value.split(/\r?\n/);
             return (
               <ul className={input.className}>
+                <div>СПИСОК ДЕЛ:</div>
                 {arr.map((str, index) => {
-                  return <li key={index}>[ ] {str}</li>
+                  return <li key={index}>- [ ] {str}</li>
                 })}
               </ul>
             )
