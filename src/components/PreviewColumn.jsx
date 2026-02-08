@@ -181,6 +181,13 @@ function PreviewColumn() {
           }
 
 
+          if (input.tag === "h1" || input.tag === "h2" || input.tag === "h3") {
+            return (
+              <pre key={input.id} className={input.className + " pre"}>
+                {input.value || `Lorem ipsum`}
+              </pre>
+            )
+          }
           if (input.tag) {
             return (
               <pre key={input.id} className={input.className + " pre"}>
