@@ -23,15 +23,15 @@ function MarkupColumn() {
           `[h1][/h1]\n[p]\n${imageText}\n[/p]\n[p]${input.value}[/p]\n[h1][/h1]\n`
         );
       }
-      let imageText = "ВоВсюШиринуПоЦентру";
+      let imageWideText = t("markup.wideImage");
       if (input.type === "screenshot") {
-        return `[p]\n[table]\n[tr]\n[td]\n${imageText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`
+        return `[p]\n[table]\n[tr]\n[td]\n${imageWideText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`
       }
       if (input.type === "screenshot-horizontal") {
-        return (`[p]\n[table]\n[tr]\n[td]\n${imageText}\n[/td]\n[td]\n${imageText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
+        return (`[p]\n[table]\n[tr]\n[td]\n${imageWideText}\n[/td]\n[td]\n${imageWideText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
       }
       if (input.type === "screenshot-block") {
-        return (`[p]\n[table]\n[tr]\n[td]\n${imageText}\n[/td]\n[td]\n${imageText}\n[/td]\n[/tr]\n[tr]\n[td]\n${imageText}\n[/td]\n[td]\n${imageText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
+        return (`[p]\n[table]\n[tr]\n[td]\n${imageWideText}\n[/td]\n[td]\n${imageWideText}\n[/td]\n[/tr]\n[tr]\n[td]\n${imageWideText}\n[/td]\n[td]\n${imageWideText}\n[/td]\n[/tr]\n[/table]\n[/p]\n`)
       }
       if (input.type === "achivment-table") {
         const pattern = '\u00A0 ';
@@ -53,7 +53,7 @@ function MarkupColumn() {
         //   `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание${result}[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Описание[/td]\n[/tr]\n[/table]\n[/p]\n`
         // )
         return (
-          `[p]\n[table]\n[tr]\n[th]Значок[/th]\n[th]Название[/th]\n[th]Описание[/th]\n[/tr]\n[tr]\n[td]Картинка[/td]\n[td]Название[/td]\n[td]Тут неразрывные пробелы, чтобы растянуть таблицу!${result}[/td]\n[/tr]\n[/table]\n[/p]\n`
+          `[p]\n[table]\n[tr]\n[th]${t("markup.achivmentTable.header-1")}[/th]\n[th]${t("markup.achivmentTable.header-2")}[/th]\n[th]${t("markup.achivmentTable.header-3")}[/th]\n[/tr]\n[tr]\n[td]${t("markup.achivmentTable.content-1")}[/td]\n[td]${t("markup.achivmentTable.content-2")}[/td]\n[td]${t("markup.achivmentTable.content-3")}-${result}[/td]\n[/tr]\n[/table]\n[/p]\n`
         )
       }
       if (input.type === "code") {
