@@ -101,7 +101,7 @@ function MarkupColumn() {
         let i = 2;
         let list = ""; list += '[p]\n';
         list += "1. ";
-        const withMarks = input.value.replace(/\n/g, `\n${i++}. `);
+        const withMarks = input.value.replace(/\n/g, ()=>`\n${i++}. `);
         list += withMarks;
         list += '\n[/p]\n';
         return list;
