@@ -61,28 +61,28 @@ function InputColumn() {
           if (block.type === "hr") {
             return (
               <div key={block.id}>
-                {block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={"[ПЕРЕНОС СТРОКИ]"} />
+                {block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={t("inputs.placeholderHr")} />
               </div>
             );
           }
           if (block.type === "screenshot") {
             return (
               <div key={block.id}>
-                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={"[СКРИНШОТ]"} />
+                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={t("inputs.placehodlerImage-1")} />
               </div>
             );
           }
           if (block.type === "screenshot-horizontal") {
             return (
               <div key={block.id}>
-                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={"[ГАЛЕРЕЯ 2 КАРТИНКИ]"} />
+                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={t("inputs.placehodlerImage-2")} />
               </div>
             );
           }
           if (block.type === "screenshot-block") {
             return (
               <div key={block.id}>
-                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={"[ГАЛЕРЕЯ 4 КАРТИНКИ]"} />
+                <div>{block.type}</div>{block.tag}<TextInput isDisabled={block.isDisabled} index={index} id={block.id} value={t("inputs.placehodlerImage-4")} />
               </div>
             );
           }

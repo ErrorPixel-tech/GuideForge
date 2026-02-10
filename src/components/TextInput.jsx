@@ -2,9 +2,11 @@ import { useDispatch } from 'react-redux';
 import { updateInput, removeBlock, moveBlockDown, moveBlockUp } from '../features/blocks/blocks';
 import style from './TextInput.module.scss';
 import TextareaAutosize from 'react-textarea-autosize';
+import { useTranslation } from "react-i18next";
 
 function TextInput({ id, value, index, ref, isDisabled, onKeyDown }) {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     dispatch(updateInput({ id, value: e.target.value }));
@@ -35,7 +37,7 @@ function TextInput({ id, value, index, ref, isDisabled, onKeyDown }) {
         type="text"
         value={value}
         onChange={handleChange}
-        placeholder="Введите текст..."
+        placeholder={t("inputs.placeholderText")}
       ></TextareaAutosize>
       <div className={style.container__menu}>
         <button className={style.menu__button} onClick={() => { handleMoveUp(index) }}>↑</button>

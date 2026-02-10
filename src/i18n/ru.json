@@ -25,7 +25,13 @@
     "inputs": {
         "header": "Инпуты",
         "headerButtonTitle": "Очистить всё",
-        "removeAllButton": "Удалить всё?"
+        "removeAllButton": "Удалить всё?",
+        "placeholderText": "Введите текст...",
+        "placehodlerImage-1": "[КАРТИНКА]",
+        "placehodlerImage-2": "[2 КАРТИНКИ]",
+        "placehodlerImage-4": "[4 КАРТИНКИ]",
+        "placehodlerTable": "[ТАБЛИЦА]",
+        "placehodlerHr": "[ПЕРЕНОС СТРОКИ]"
     },
     "markup": {
         "header": "Разметка",

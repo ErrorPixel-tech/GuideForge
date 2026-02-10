@@ -25,7 +25,13 @@
   "inputs": {
     "header": "Inputs",
     "headerButtonTitle": "Remove all",
-    "removeAllButton": "Remove all?"
+    "removeAllButton": "Remove all?",
+    "placeholderText": "Enter text...",
+    "placehodlerImage-1": "[IMAGE]",
+    "placehodlerImage-2": "[2 IMAGES]",
+    "placehodlerImage-4": "[4 IMAGES]",
+    "placehodlerTable": "[TABLE]",
+    "placeholderHr": "[HR]"
   },
   "markup": {
     "header": "Markup",
